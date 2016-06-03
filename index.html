@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dominant Species Calculator</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <script src="main.js"></script>
+
+  <script id="animals-temp" type="text/x-handlebars-template">
+    <div class="col-md-12"><h1>⬢ Dominant Species Calculator</h1></div>
+    {{#each animals}}
+    <div id="{{toLowerCase this}}-section" class="col-md-2">
+      <h2>{{this}}</h2>
+      <label>Active?</label>
+      <input type="checkbox" class="active" data-active="{{toLowerCase this}}">
+      <div id="{{toLowerCase this}}-elements">
+        {{#each ../elements}}
+          <div class="element-{{@index}}">
+            <h4>{{this}}</h4>
+            <button class="add-elem" data-animal-name="{{toLowerCase @../this}}" data-elem-name="{{toLowerCase this}}">+</button>
+            <button class="remove-elem" data-animal-name="{{toLowerCase @../this}}" data-elem-name="{{toLowerCase this}}">-</button>
+            <h6 id="elem-display-{{toLowerCase @../this}}-{{toLowerCase this}}">0</h6>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+    {{/each}}
+  </script>
+
+  <script id="elements-temp" type="text/x-handlebars-template">
+    <div class="row"><div class="col-md-12"><h2 id="dominant"></h2></div></div>
+    <div class="row"><h2 class="col-md-12">⬡ Elements Present</h2></div>
+    <div id="calc-elements" class="row">
+      {{#each elements}}
+        <div class="calc-el col-md-2" data-name="{{toLowerCase this}}">
+          <h4>{{this}}</h4>
+          <button class="add-hex-elem" data-hex-elem="{{toLowerCase this}}">+</button>
+          <button class="remove-hex-elem" data-hex-elem="{{toLowerCase this}}">-</button>
+        </div>
+      {{/each}}
+      {{#each elements}}
+        <div class="calc-display col-md-2 display-{{toLowerCase this}}">
+          <h6 id="hex-display-{{toLowerCase this}}">0</h6>
+        </div>
+      {{/each}}
+    </div>
+  </script>
+
+</head>
+
+<body>
+
+  <div id="container">
+    <div id="players-section" class="row"></div>
+    <div id="calculator-container"></div>
+    <div class="button-holder"><button id="clear">Clear</button></div>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+.calc-el, .calc-display {
+  /*border: 1px solid black;*/
+  text-align: center;
+}
+
+.col-md-2 {
+  border-radius: 15px;
+    /*text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);*/
+}
+
+body {
+  background: burlywood;
+}
+
+#container {
+  margin: 2%;
+}
+
+#clear {
+  width: 80%;
+  padding: 1%;
+  border-radius: 10px;
+}
+
+.button-holder {
+  padding: 1%;
+  margin: 2%;
+  text-align: center;
+}
+
+
+div[class*='element-']{
+  border-radius: 15px;
+  color: black;
+  padding: 2%;
+}
+
+#mammals-section {
+  background-color: rgba(255,255,255,0.8)
+}
+
+#reptiles-section {
+  background-color: rgba(0,0,0,0.7)
+}
+
+#birds-section {
+  background-color: rgba(255,215,0,0.6)
+}
+
+#insects-section {
+  background-color: limegreen;
+}
+
+#arachnids-section {
+  background-color: rgba(178,34,34,0.8)
+}
+
+#amphibians-section {
+  background-color: rgba(0,200,200,0.8)
+}
+
+div.element-0 {
+  background-color: rgba(154,255,50,0.8);
+  border: 2px solid forestgreen;
+}
+
+div.element-1 {
+  background-color: rgba(255,105,180, 0.8);
+  border: 2px solid fuchsia;
+}
+
+div.element-2 {
+  background-color: rgba(245, 245, 245, 0.9);
+  border: 2px solid dimgray;
+}
+
+div.element-3 {
+  background-color: rgba(240, 230, 140, 0.9);
+  border: 2px solid goldenrod;
+}
+
+div.element-4 {
+  background-color: rgba(255, 140, 0, 0.9);
+  border: 2px solid khaki;
+}
+
+div.element-5 {
+  background-color: rgba(135,206,235, 0.9);
+  border: 2px solid powderblue;
+}
